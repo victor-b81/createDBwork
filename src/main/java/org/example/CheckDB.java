@@ -1,48 +1,70 @@
+package org.example;
+
 import java.sql.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CheckDB {
-
-    public static Boolean check_db(String name_sql_bd, String usr_sql_bd, String pass_sql_bd) throws SQLException {
-        boolean db_is_exist = false;
-        Connection connect = null;
-        try {
-            connect = DriverManager.getConnection("jdbc:postgresql://localhost/"+name_sql_bd, usr_sql_bd, pass_sql_bd);
-            db_is_exist = true;
-            System.out.println("Base is exist");
-        } catch (SQLException e){
-            // e.printStackTrace();
-            System.out.println("Base is NOT exist");
-        }finally {
-            if (connect != null) {
-                connect.close();
-            }
-        }
-    return db_is_exist;
-    }
-
-    public static Boolean check_table_db(String name_sql_bd, String usr_sql_bd, String pass_sql_bd, String sql_Table_Query) throws SQLException {
-        boolean query_Ans = false;
+    // М .... Проверка и создание БД
+    public static void check_table_db(String name_db_sql, String usr_bd_sql, String pass_bd_sql, HashMap<String, String> table_data, String[][] key_table_arr) throws SQLException {
         Connection connect = null;
         Statement stat = null;
+        boolean check_table_exist = false, check_key = false, db_ok = false;
+        ResultSet result_table;
 
-        try {
-            connect = DriverManager.getConnection("jdbc:postgresql://localhost/"+name_sql_bd,usr_sql_bd, pass_sql_bd);
-            stat = connect.createStatement();
-            ResultSet result = stat.executeQuery("SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = " + "'" + sql_Table_Query + "'" + ");");
-            while (result.next()){
-                query_Ans = (result.getString("exists").equals("t"))? true : false;
+        do {
+            try {
+                connect = DriverManager.getConnection("jdbc:postgresql://localhost/" + name_db_sql, usr_bd_sql, pass_bd_sql); // Пробуем подключиться к БД
+                System.out.println("Base is exist");        // если БД существует, то сообщаем об этом
+                stat = connect.createStatement();
+                for (Map.Entry<String, String> entry : table_data.entrySet()) {                            // Перебираем переданный список
+                    result_table = stat.executeQuery("SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = " + "'" + entry.getKey() + "'" + ");");       // Получение данных из базы
+                    while (result_table.next()) {
+                        check_table_exist = (result_table.getString("exists").equals("t")) ? true : false;
+                    }
+                    if (check_table_exist) {                                                                // если база существует
+                        System.out.println(entry.getKey() + " is exist");                                   // Сообщаем, что база существует
+                    } else {                                                                                // Если базы нет то создаем базу
+                        System.out.println(entry.getKey() + " is NOT exist, Creating DB");
+                        stat.execute("create table " + entry.getKey() + "(" + entry.getValue() + ");");
+                        System.out.println("Table " + entry.getKey() + " created");
+                    }
+                }
+
+                for (int i = 0; i <= key_table_arr.length - 1; i++) {                                        // Проверяю наличие требуемых ключей
+                    ResultSet result_keys = stat.executeQuery("SELECT EXISTS(SELECT 1 FROM information_schema.table_constraints WHERE constraint_name='" + key_table_arr[i][0] + "' AND table_name='" + key_table_arr[i][1] + "');");
+                    while (result_keys.next()) {
+                        check_key = (result_keys.getString("exists").equals("t")) ? true : false;
+                    }
+                    if (check_key) {                                                                        // Если ключ есть, то сообщаем что ключ есть
+                        System.out.println(key_table_arr[i][0] + " is exist");
+                    } else {                                                                                // Если ключа нет, то содаем ключ.
+                        System.out.println(key_table_arr[i][0] + " is NOT exist");
+                        stat.execute(key_table_arr[i][2]);
+                        System.out.println("Key " + key_table_arr[i][2] + " created");
+                    }
+                }
+                db_ok = true;
+
+            } catch (SQLException e) {
+                if (e.getSQLState().equals("3D000")) {                                                      // Если базы нет, то создаем базу данных
+                    System.out.println("Base is NOT exist");
+                    connect = DriverManager.getConnection("jdbc:postgresql://localhost/", usr_bd_sql, pass_bd_sql);
+                    stat = connect.createStatement();
+                    stat.executeUpdate("create database " + name_db_sql + ";");                         // Команда создания БД
+                    System.out.println("DB " + name_db_sql + " is created");
+
+                } else {
+                    System.out.println(e.getSQLState());
+                }
+            } finally {
+                if (connect != null) {
+                    connect.close();
+                }
+                if (stat != null) {
+                    stat.close();
+                }
             }
-            if (query_Ans) System.out.println("Table " + sql_Table_Query +  " exist"); else System.out.println("Table " + sql_Table_Query +  " is NOT exist");
-        } catch (SQLException e){
-            e.printStackTrace();
-        } finally {
-            if (stat != null) {
-                stat.close();
-            }
-            if (connect != null) {
-                connect.close();
-            }
-        }
-        return query_Ans;
+        } while (!db_ok);
     }
 }

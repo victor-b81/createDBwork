@@ -1,21 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="25437cb2-a0ca-431f-b5bd-edd44f75b30b" name="Changes" comment="" />
+    <list default="true" id="25437cb2-a0ca-431f-b5bd-edd44f75b30b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CheckDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CheckDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/workerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/workerClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/addworker.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/addworker.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2H5AETW21WLRHnOf8poJyEp6ouH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Viktor/Java/IDEA/untitled1&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\Другие компьютеры\ДомашнийПК\IDEA\untitled1\src" />
+      <recent name="H:\Другие компьютеры\ДомашнийПК\IDEA\untitled1\src\main" />
+      <recent name="H:\Другие компьютеры\ДомашнийПК\IDEA\untitled1\src\main\resources" />
+      <recent name="H:\Другие компьютеры\ДомашнийПК\IDEA\untitled1\src\main\java" />
+      <recent name="C:\Users\Viktor\Java\test\untitled1\src\main\java\org\example" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="org.example.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="Create_and_work_DB" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.org.example.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -24,7 +91,40 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667564461056</updated>
+      <workItem from="1667564462466" duration="5768000" />
+      <workItem from="1667758921934" duration="1394000" />
+      <workItem from="1667764140375" duration="4584000" />
+      <workItem from="1667840761603" duration="7444000" />
+      <workItem from="1667883861570" duration="22182000" />
+      <workItem from="1667927677594" duration="1234000" />
+      <workItem from="1667940435640" duration="1435000" />
+      <workItem from="1668047181918" duration="3453000" />
+      <workItem from="1668080251994" duration="6435000" />
+      <workItem from="1668091956188" duration="3741000" />
+      <workItem from="1668103699668" duration="7305000" />
+      <workItem from="1668142757383" duration="17098000" />
+      <workItem from="1668185455009" duration="13636000" />
+      <workItem from="1668264813021" duration="29000" />
+      <workItem from="1668265055134" duration="5449000" />
+      <workItem from="1668368475550" duration="2194000" />
+      <workItem from="1668409752998" duration="13079000" />
+      <workItem from="1668441418950" duration="3793000" />
+      <workItem from="1668448347120" duration="89000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
